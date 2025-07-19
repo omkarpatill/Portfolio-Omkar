@@ -1,72 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
-    <link href="styles.css" rel="stylesheet"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Omkar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome CDN (for consistency with index.html) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="navigation container">
-        <div class="nav-brand">Omkar's Portfolio</div>
-        <ul class="nav-pills">
-            <li class="list-inline"><a class="link" href="index.html">Home</a></li>
-            <li class="list-inline"><a class="link link-active" href="projects.html">Projects</a></li>
-            <li class="list-inline"><a class="link"  href="blogs.html">Blog</a></li>
-        </ul>
+  <div class="container">
+    <nav class="main-nav">
+      <div class="nav-brand">Omkar's Portfolio</div>
+      <ul class="nav-pills">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="blogs.html">Blog</a></li>
+      </ul>
+      <button class="toggle-btn" id="modeToggle" onclick="toggleMode()">Light Mode</button>
     </nav>
 
-   <header class="hero">
-       <h1 class="hero-header">see my <span class="span">code</span></h1>
-</header>
+    <header>
+      <h1 class="hero-header">See my <span>projects</span></h1>
+    </header>
 
+    <main>
+      <div class="project-grid">
+        <div class="card">
+          <h1>Is your birthday lucky?</h1><small>December, 2022</small>
+          <p>Check whether your birthday is lucky or not.</p>
+          <div class="card-buttons">
+            <a class="primarylink" href="https://omkarsluckybirthday.netlify.app/">Live Project</a>
+            <a class="seclink" href="https://github.com/omkarpatill/Is-your-Birthday-Lucky">View Source</a>
+          </div>
+        </div>
 
-    <ol reversed>
-        
-        <li><h1>is your birthday lucky?</h1> <small>december,2022</small></li>
-        <p>A website which can help you to check whether your birthday is lucky or not.</p>
-        <a class="primarylink" href="https://omkarsluckybirthday.netlify.app/">live project</a>
-        <a class="seclink" href="https://github.com/omkarpatill/Is-your-Birthday-Lucky">view source </a> 
-        
-        
-        <li><h1>cash register</h1> <small>december,2022</small></li>
-        <p>A cash register manager which helps the user by telling how can he/she return the change to the customer with minimum number of notes.</p>
-        <a class="primarylink" href="https://omkarscashregister.netlify.app/">live project</a>
-        <a class="seclink" href="https://github.com/omkarpatill/Cash-Register">view source </a> 
-        
-        <li><h1>goodsongs</h1> <small>december,2022</small></li>
-        <p>Do you like listening songs? You would find some good recommendations for all the genre. Made using ReactJS with love</p>
-        <a class="primarylink" href="https://xxuhox.csb.app">live project</a>
-        <a class="seclink" href="https://codesandbox.io/s/song-recommendation-app-xxuhox">view source </a> 
-        
-        
-        <li><h1>emoji interpreter</h1> <small>december,2022</small></li>
-        <p>I struggle with understanding the emojis. Do you too? If yes, then see this library of emojis with meaning</p>
-        <a class="primarylink" href="https://h83qny.csb.app/">live project</a>
-        <a class="seclink" href="https://codesandbox.io/s/emojipedia-h83qny">view source </a> 
+        <div class="card">
+          <h1>Cash Register</h1><small>December, 2022</small>
+          <p>Helps users return change with minimum number of notes.</p>
+          <div class="card-buttons">
+            <a class="primarylink" href="https://omkarscashregister.netlify.app/">Live Project</a>
+            <a class="seclink" href="https://github.com/omkarpatill/Cash-Register">View Source</a>
+          </div>
+        </div>
 
+        <div class="card">
+          <h1>Goodsongs</h1><small>December, 2022</small>
+          <p>Song recommendations across genres using ReactJS.</p>
+          <div class="card-buttons">
+            <a class="primarylink" href="https://xxuhox.csb.app">Live Project</a>
+            <a class="seclink" href="https://codesandbox.io/s/song-recommendation-app-xxuhox">View Source</a>
+          </div>
+        </div>
 
-        <li><h1>Hodor Translator</h1> <small>december,2022</small></li>
-        <p>Are you a fan of Game of thrones? Use the translator to convert your text from English to Hodor language.</p>
-        <a class="primarylink" href="https://hodortranslate.netlify.app/">live project</a>
-        <a class="seclink" href="https://github.com/omkarpatill/Hodor-translator">view source </a> 
-        
-        <li><h1>Minion Translator</h1> <small>december,2022</small></li>
-        <p>Are you a fan of minions? Did you know that the gibberish they say is an actual language. Use the translator to convert your text from English to Minion speak or Banana language.</p>
-        <a class="primarylink" href="https://omkarsbanaspeak.netlify.app/">live project</a>
-        <a class="seclink" href="https://github.com/omkarpatill/banana-speak">view source </a>
-        
-        <li><h1>Do You know your cartoons?</h1> <small>december,2022</small></li>
-        <p>Do you remember your childhood? Let's play a quiz and see.</p>
-        <a class="primarylink" href="https://replit.com/@OmkarPatil35/Quiz?embed=true">live project</a>
-        <a class="seclink" href="https://github.com/omkarpatill/Quiz-on-cartoons">view source </a>
-       
-        <li><h1>Do You Know Omkar?</h1> <small>december,2022</small></li>
-        <p>A CLI app built with nodeJS. You can send this to your friends and find out who really knows you</p>
-        <a class="primarylink" href="https://replit.com/@OmkarPatil35/end-game?embed=true">live project</a>
-        <a class="seclink" href="https://github.com/omkarpatill/Quiz-Do-you-now-Omkar">view source </a>
-    </ol>
-    
+        <div class="card">
+          <h1>Emoji Interpreter</h1><small>December, 2022</small>
+          <p>Emoji dictionary to understand their meaning.</p>
+          <div class="card-buttons">
+            <a class="primarylink" href="https://h83qny.csb.app/">Live Project</a>
+            <a class="seclink" href="https://codesandbox.io/s/emojipedia-h83qny">View Source</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h1>Hodor Translator</h1><small>December, 2022</small>
+          <p>Convert English text into Hodor language.</p>
+          <div class="card-buttons">
+            <a class="primarylink" href="https://hodortranslate.netlify.app/">Live Project</a>
+            <a class="seclink" href="https://github.com/omkarpatill/Hodor-translator">View Source</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h1>Minion Translator</h1><small>December, 2022</small>
+          <p>Convert English to Banana (Minion) language.</p>
+          <div class="card-buttons">
+            <a class="primarylink" href="https://omkarsbanaspeak.netlify.app/">Live Project</a>
+            <a class="seclink" href="https://github.com/omkarpatill/banana-speak">View Source</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h1>Do You Know Your Cartoons?</h1><small>December, 2022</small>
+          <p>Play a quiz about classic cartoons.</p>
+          <div class="card-buttons">
+            <a class="primarylink" href="https://replit.com/@OmkarPatil35/Quiz?embed=true">Live Project</a>
+            <a class="seclink" href="https://github.com/omkarpatill/Quiz-on-cartoons">View Source</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h1>Do You Know Omkar?</h1><small>December, 2022</small>
+          <p>A CLI quiz app to test how well your friends know you.</p>
+          <div class="card-buttons">
+            <a class="primarylink" href="https://replit.com/@OmkarPatil35/end-game?embed=true">Live Project</a>
+            <a class="seclink" href="https://github.com/omkarpatill/Quiz-Do-you-now-Omkar">View Source</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p style="text-align:center;">&copy; 2025 Omkar. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+  function setMode(mode) {
+    if (mode === 'light') {
+      document.body.classList.add('light-mode');
+      document.getElementById('modeToggle').textContent = 'Dark Mode';
+    } else {
+      document.body.classList.remove('light-mode');
+      document.getElementById('modeToggle').textContent = 'Light Mode';
+    }
+  }
+
+  function toggleMode() {
+    if (document.body.classList.contains('light-mode')) {
+      setMode('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      setMode('light');
+      localStorage.setItem('theme', 'light');
+    }
+  }
+
+  // On page load, set mode from localStorage
+  window.onload = function() {
+    const saved = localStorage.getItem('theme');
+    setMode(saved === 'light' ? 'light' : 'dark');
+  }
+</script>
 </body>
 </html>

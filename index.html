@@ -1,62 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home |Omkar Patil</title>
-    <link href="styles.css" rel="stylesheet"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omkar | Cloud Security Analyst</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <nav class="navigation container">
-        <div class="nav-brand">Omkar's Portfolio</div>
-        <ul class="nav-pills">
-            <li class="list-inline"><a class="link link-active" href="/">Home</a></li>
-            <li class="list-inline"><a class="link" href="projects.html">Projects</a></li>
-            <li class="list-inline"><a class="link" href="blogs.html">Blog</a></li>
-        </ul>
+  <div class="container">
+    <nav class="main-nav">
+      <div class="nav-brand">Omkar's Portfolio</div>
+      <ul class="nav-pills">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="blogs.html">Blog</a></li>
+      </ul>
+      <button class="toggle-btn" id="modeToggle" onclick="toggleMode()">Light Mode</button>
     </nav>
 
-    <header class="hero">
-        <img class="hero-img" src="images/hero.svg" />
-        <h1  class="hero-header">Hello! welcome to my <div class="span">Portfolio!</div></h1>
+    <header class="hero-section">
+      <h1>Hi, I'm <span>Omkar</span></h1>
+      <p>Cloud Security Analyst passionate about building secure and scalable systems.</p>
+      <img 
+        src="undraw_cloud-hosting_tfeh.svg"
+        alt="Cloud Illustration"
+        style="max-width: 320px; width: 100%; margin: 2rem auto; display: block;"
+      >
+      <div class="cta-buttons">
+        <a href="projects.html" class="primarylink">View Projects</a>
+        <a href="Omkar_Resume.pdf" class="seclink">Download Resume</a>
+      </div>
     </header>
 
-    <section class="section">
-        <div class="container-centre"><h1>technologies</h1>
-            <p>I'm familiar with HTML5, CSS3, Git, JavaScript, NodeJS, ReactJS, and Web Hosting</p>
-            
-        </div>
-        
-    </section>
+    <main>
+      <section class="about-me">
+        <h2>About Me</h2>
+        <p>
+          I’m a Cloud Security Analyst with experience in AWS, Azure, threat modeling, and secure-by-design practices. I enjoy working with automation, DevSecOps, and securing cloud-native apps.
+        </p>
+      </section>
 
-    
-    <section class="section ow">
-        <div class="container-centre">
-            <h1>projects</h1>
-            <p>I like to showcase my work and thus, you can see my projects hosted online</p>
-            <a class="primarylink" href="projects.html">see projects</a>
+      <section class="skills-certs-row">
+        <div class="card skills-card">
+          <h2>Skills &amp; Tools</h2>
+          <div class="skills-grid">
+            <div>
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" title="Azure" style="width:2.5rem;height:2.5rem;">
+              <div>Azure</div>
+            </div>
+            <div>
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" title="Docker" style="width:2.5rem;height:2.5rem;">
+              <div>Docker</div>
+            </div>
+            <div>
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python" style="width:2.5rem;height:2.5rem;">
+              <div>Python</div>
+            </div>
+            <div>
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" title="Bash" style="width:2.5rem;height:2.5rem;">
+              <div>Bash</div>
+            </div>
+            <div>
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" title="Kubernetes" style="width:2.5rem;height:2.5rem;">
+              <div>Kubernetes</div>
+            </div>
+            <div>
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform" title="Terraform" style="width:2.5rem;height:2.5rem;">
+              <div>Terraform</div>
+            </div>
+          </div>
         </div>
-        
-    </section>
-
-    <section class="section">
-        <div class="container-centre"><h1>blogs</h1>
-            <p>I am also working on some technical and non techincal blogs. I like to document my journey of learning.</p>
-            <a class="seclink" href="blogs.html">see blogs </a>
-            
+        <div class="card certs-card">
+          <h2>Certifications</h2>
+          <ul class="cert-list">
+            <li>Azure AZ-500</li>
+            <li>Azure AZ-104</li>
+            <li>Azure AZ-900</li>
+          </ul>
         </div>
-        
-    </section>
+      </section>
 
-    <footer class="footer">
-    <div class="footer-header">where to find me?</div>
-    <ul class="footer-pills">
-        <li class="list-inline"><a class="link" href="https://github.com/omkarpatill">github</a></li>
-        <li class="list-inline"><a class="link" href="https://www.linkedin.com/in/omkar-patil-977214261/">linkedin</a></li>
-        <li class="list-inline"><a class="link" href="https://twitter.com/OmkarPatil_dev">twitter</a></li>
-    </ul>
+      <section class="featured-projects">
+        <h2>Featured Projects</h2>
+        <p>Check out a few highlighted works from my portfolio:</p>
+        <div class="project-preview">
+          <div class="card">
+            <h1>GoodSongs</h1>
+            <p>ReactJS app recommending songs by genre. Fast, clean, fun.</p>
+            <div class="card-buttons">
+              <a href="https://xxuhox.csb.app" class="primarylink">Live</a>
+              <a href="https://codesandbox.io/s/song-recommendation-app-xxuhox" class="seclink">Source</a>
+            </div>
+          </div>
+          <div class="card">
+            <h1>Cash Register</h1>
+            <p>Helps you calculate change with minimum notes using JavaScript.</p>
+            <div class="card-buttons">
+              <a href="https://omkarscashregister.netlify.app/" class="primarylink">Live</a>
+              <a href="https://github.com/omkarpatill/Cash-Register" class="seclink">Source</a>
+            </div>
+          </div>
+        </div>
+        <div class="see-all-projects">
+          <a href="projects.html" class="seclink">See All Projects →</a>
+        </div>
+      </section>
+
+      <section class="blog-snippets">
+        <h2>Recent Blog Posts</h2>
+        <ul>
+          <li><a href="blogs.html">Top 5 OWASP Practices for Startups</a></li>
+          <li><a href="blogs.html">Automating IAM Reviews with Python</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p style="text-align:center;">&copy; 2025 Omkar. All rights reserved.</p>
     </footer>
-    
+  </div>
+  <script>
+  function setMode(mode) {
+    if (mode === 'light') {
+      document.body.classList.add('light-mode');
+      document.getElementById('modeToggle').textContent = 'Dark Mode';
+    } else {
+      document.body.classList.remove('light-mode');
+      document.getElementById('modeToggle').textContent = 'Light Mode';
+    }
+  }
+
+  function toggleMode() {
+    if (document.body.classList.contains('light-mode')) {
+      setMode('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      setMode('light');
+      localStorage.setItem('theme', 'light');
+    }
+  }
+
+  // On page load, set mode from localStorage
+  window.onload = function() {
+    const saved = localStorage.getItem('theme');
+    setMode(saved === 'light' ? 'light' : 'dark');
+  }
+  </script>
 </body>
 </html>
