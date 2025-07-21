@@ -64,21 +64,22 @@
     }
     @media (max-width: 768px) {
   .project-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    grid-template-columns: 1fr;
     padding: 0 1rem;
   }
-   .card-buttons {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
 
+  .project-grid .card {
+    width: 100%;
+  }
   .card-buttons a {
     width: 100%;
     text-align: center;
   }
 }
+
+
+  
+
 
   </style>
 </head>
