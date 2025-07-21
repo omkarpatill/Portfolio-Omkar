@@ -7,6 +7,53 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="styles.css" rel="stylesheet" />
+  <style>
+    @media (max-width: 768px) {
+      .main-nav {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .nav-pills {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+      }
+
+      .nav-pills li a {
+        padding: 0.75rem 1rem;
+        display: block;
+        width: 100%;
+      }
+
+      .hero-section {
+        padding: 2rem 1rem;
+        text-align: center;
+      }
+
+      .blog-content {
+        padding: 1rem;
+      }
+
+      .blog-content p {
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+      }
+
+      .social-links {
+        padding: 2rem 1rem;
+        text-align: center;
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -31,7 +78,7 @@
     </header>
 
     <main>
-      <section class="about-me">
+      <section class="blog-content">
         <p>
           Dummy text is used in the publishing industry or by web designers to occupy space which will later be filled with real content.
           This is required when the final text is not yet available. It is also known as "fill text".
@@ -47,15 +94,9 @@
       <section class="social-links">
         <h2>Where to Find Me</h2>
         <div class="social-icons">
-          <a href="https://linkedin.com/in/omkarpatill" target="_blank" title="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://github.com/omkarpatill" target="_blank" title="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://twitter.com/omkarpatill" target="_blank" title="Twitter">
-            <i class="fab fa-twitter"></i>
-          </a>
+          <a href="https://linkedin.com/in/omkarpatill" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/omkarpatill" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com/omkarpatill" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
         </div>
       </section>
     </main>

@@ -6,22 +6,68 @@
   <title>Omkar | Cloud Security Analyst</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <!-- AOS CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
-
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-
-  <!-- Font Awesome CDN -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    @media (max-width: 768px) {
+      .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .nav-pills {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+      }
+
+      .nav-pills li a {
+        width: 100%;
+        display: block;
+        padding: 0.75rem 1rem;
+      }
+
+      .hero-section {
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .skills-certs-row {
+        flex-direction: column;
+        padding: 1rem;
+      }
+
+      .project-preview {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+      }
+
+      .social-icons {
+        gap: 1.2rem;
+        flex-wrap: wrap;
+      }
+
+      .theme-toggle-wrapper {
+        margin-left: 0;
+        align-self: flex-end;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <div class="container">
-    <nav class="main-nav" >
+    <nav class="main-nav">
       <div class="nav-brand">Omkar's Portfolio</div>
       <ul class="nav-pills">
         <li><a href="index.html" aria-current="page">Home</a></li>
@@ -29,35 +75,23 @@
         <li><a href="blogs.html">Blog</a></li>
       </ul>
       <div class="theme-toggle-wrapper">
-  <label class="theme-switch">
-    <input type="checkbox" id="modeToggle" onchange="toggleMode()" />
-    <span class="slider round"></span>
-  </label>
-  <span class="mode-label">Light Mode</span>
-</div>
-
+        <label class="theme-switch">
+          <input type="checkbox" id="modeToggle" onchange="toggleMode()" />
+          <span class="slider round"></span>
+        </label>
+        <span class="mode-label">Light Mode</span>
+      </div>
     </nav>
 
-<header class="hero-section">
-  <h1 data-aos="zoom-in">Hi, I'm <span>Omkar</span></h1>
-  <p data-aos="zoom-in" data-aos-delay="150">
-    Cloud Security Analyst passionate about building secure and scalable systems.
-  </p>
-
-  <img 
-    src="undraw_cloud-hosting_tfeh.svg"
-    alt="Cloud Illustration"
-    data-aos="fade-up"
-    data-aos-delay="300"
-    style="max-width: 320px; width: 100%; margin: 2rem auto; display: block;"
-  >
-
-  <div class="cta-buttons" data-aos="fade-up" data-aos-delay="500">
-    <a href="projects.html" class="primarylink">View Projects</a>
-    <a href="Omkar_Resume.pdf" class="seclink">Download Resume</a>
-  </div>
-</header>
-
+    <header class="hero-section">
+      <h1 data-aos="zoom-in">Hi, I'm <span>Omkar</span></h1>
+      <p data-aos="zoom-in" data-aos-delay="150">Cloud Security Analyst passionate about building secure and scalable systems.</p>
+      <img src="undraw_cloud-hosting_tfeh.svg" alt="Cloud Illustration" data-aos="fade-up" data-aos-delay="300" style="max-width: 320px; width: 100%; margin: 2rem auto; display: block;">
+      <div class="cta-buttons" data-aos="fade-up" data-aos-delay="500">
+        <a href="projects.html" class="primarylink">View Projects</a>
+        <a href="Omkar_Resume.pdf" class="seclink">Download Resume</a>
+      </div>
+    </header>
 
     <main>
       <section class="about-me" data-aos="fade-up">
@@ -68,43 +102,43 @@
       </section>
 
       <section class="skills-certs-row">
-        <div class="card skills-card">
+        <div class="card skills-card" data-aos="fade-up">
           <h2>Skills &amp; Tools</h2>
-          <div class="skills-grid" data-aos="fade-up">
+          <div class="skills-grid">
             <div>
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" title="Azure" style="width:2.5rem;height:2.5rem;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" style="width:2.5rem;height:2.5rem;">
               <div>Azure</div>
             </div>
             <div>
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" title="Docker" style="width:2.5rem;height:2.5rem;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" style="width:2.5rem;height:2.5rem;">
               <div>Docker</div>
             </div>
             <div>
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python" style="width:2.5rem;height:2.5rem;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" style="width:2.5rem;height:2.5rem;">
               <div>Python</div>
             </div>
             <div>
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" title="Bash" style="width:2.5rem;height:2.5rem;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" style="width:2.5rem;height:2.5rem;">
               <div>Bash</div>
             </div>
             <div>
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" title="Kubernetes" style="width:2.5rem;height:2.5rem;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" style="width:2.5rem;height:2.5rem;">
               <div>Kubernetes</div>
             </div>
             <div>
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform" title="Terraform" style="width:2.5rem;height:2.5rem;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform" style="width:2.5rem;height:2.5rem;">
               <div>Terraform</div>
             </div>
           </div>
         </div>
+
         <div class="card certs-card" data-aos="fade-up">
           <h2>Certifications</h2>
           <ul class="cert-list">
-  <li><i class="devicon-azure-plain colored"></i> Azure AZ-500</li>
-  <li><i class="devicon-azure-plain colored"></i> Azure AZ-104</li>
-  <li><i class="devicon-azure-plain colored"></i> Azure AZ-900</li>
-</ul>
-
+            <li><i class="devicon-azure-plain colored"></i> Azure AZ-500</li>
+            <li><i class="devicon-azure-plain colored"></i> Azure AZ-104</li>
+            <li><i class="devicon-azure-plain colored"></i> Azure AZ-900</li>
+          </ul>
         </div>
       </section>
 
@@ -135,66 +169,58 @@
       </section>
 
       <section class="social-links" data-aos="fade-up">
-  <h2>Where to Find Me</h2>
-  <div class="social-icons">
-    <a href="https://linkedin.com/in/omkarpatill" target="_blank" title="LinkedIn">
-      <i class="fab fa-linkedin"></i>
-    </a>
-    <a href="https://github.com/omkarpatill" target="_blank" title="GitHub">
-      <i class="fab fa-github"></i>
-    </a>
-    <a href="https://twitter.com/omkarpatill" target="_blank" title="Twitter">
-      <i class="fab fa-twitter"></i>
-    </a>
-  </div>
-</section>
-
+        <h2>Where to Find Me</h2>
+        <div class="social-icons">
+          <a href="https://linkedin.com/in/omkarpatill" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/omkarpatill" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com/omkarpatill" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+      </section>
     </main>
 
     <footer>
       <p style="text-align:center;">&copy; 2025 Omkar. All rights reserved.</p>
     </footer>
   </div>
+
+  <!-- Theme Mode Script -->
   <script>
-  function setMode(mode) {
-    const body = document.body;
-    const toggle = document.getElementById('modeToggle');
-    const label = document.querySelector('.mode-label');
-
-    if (mode === 'light') {
-      body.classList.add('light-mode');
-      toggle.checked = true;
-      label.textContent = 'Light Mode';
-    } else {
-      body.classList.remove('light-mode');
-      toggle.checked = false;
-      label.textContent = 'Dark Mode';
+    function setMode(mode) {
+      const body = document.body;
+      const toggle = document.getElementById('modeToggle');
+      const label = document.querySelector('.mode-label');
+      if (mode === 'light') {
+        body.classList.add('light-mode');
+        toggle.checked = true;
+        label.textContent = 'Light Mode';
+      } else {
+        body.classList.remove('light-mode');
+        toggle.checked = false;
+        label.textContent = 'Dark Mode';
+      }
     }
-  }
 
-  function toggleMode() {
-    const isChecked = document.getElementById('modeToggle').checked;
-    const newMode = isChecked ? 'light' : 'dark';
-    setMode(newMode);
-    localStorage.setItem('theme', newMode);
-  }
+    function toggleMode() {
+      const isChecked = document.getElementById('modeToggle').checked;
+      const newMode = isChecked ? 'light' : 'dark';
+      setMode(newMode);
+      localStorage.setItem('theme', newMode);
+    }
 
-  window.addEventListener('DOMContentLoaded', () => {
-    const savedMode = localStorage.getItem('theme') || 'dark';
-    setMode(savedMode);
-  });
-</script>
-<!-- AOS JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-  AOS.init({
-    once: true, // animate only once
-    duration: 800, // animation duration (ms)
-    easing: 'ease-in-out', // easing function
-  });
-</script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedMode = localStorage.getItem('theme') || 'dark';
+      setMode(savedMode);
+    });
+  </script>
 
-
-
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 800,
+      easing: 'ease-in-out',
+    });
+  </script>
 </body>
 </html>

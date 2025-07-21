@@ -6,15 +6,65 @@
   <title>Projects | Omkar's Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <!-- AOS CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
-  <!-- Font Awesome CDN (for consistency with index.html) -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="styles.css" rel="stylesheet">
+
+  <style>
+    @media (max-width: 768px) {
+      .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .nav-pills {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+      }
+
+      .nav-pills li a {
+        width: 100%;
+        display: block;
+        padding: 0.75rem 1rem;
+      }
+
+      .theme-toggle-wrapper {
+        align-self: flex-end;
+      }
+
+      .hero-section {
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+
+      .project-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0 1rem;
+      }
+
+      .card-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .social-links {
+        padding: 2rem 1rem;
+        text-align: center;
+      }
+
+      .social-icons {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -25,13 +75,13 @@
         <li><a href="projects.html" aria-current="page">Projects</a></li>
         <li><a href="blogs.html">Blog</a></li>
       </ul>
-   <div class="theme-toggle-wrapper">
-  <label class="theme-switch">
-    <input type="checkbox" id="modeToggle" onchange="toggleMode()" />
-    <span class="slider round"></span>
-  </label>
-  <span class="mode-label">Light Mode</span>
-</div>
+      <div class="theme-toggle-wrapper">
+        <label class="theme-switch">
+          <input type="checkbox" id="modeToggle" onchange="toggleMode()" />
+          <span class="slider round"></span>
+        </label>
+        <span class="mode-label">Light Mode</span>
+      </div>
     </nav>
 
     <header class="hero-section" data-aos="zoom-in" data-aos-delay="150">
@@ -39,7 +89,8 @@
     </header>
 
     <main>
-      <div class="project-grid" >
+      <div class="project-grid">
+        <!-- Each card represents a project -->
         <div class="card" data-aos="fade-up">
           <h1>Is your birthday lucky?</h1><small>December, 2022</small>
           <p>Check whether your birthday is lucky or not.</p>
@@ -112,20 +163,15 @@
           </div>
         </div>
       </div>
+
       <section class="social-links" data-aos="fade-up">
-  <h2>Where to Find Me</h2>
-  <div class="social-icons">
-    <a href="https://linkedin.com/in/omkarpatill" target="_blank" title="LinkedIn">
-      <i class="fab fa-linkedin"></i>
-    </a>
-    <a href="https://github.com/omkarpatill" target="_blank" title="GitHub">
-      <i class="fab fa-github"></i>
-    </a>
-    <a href="https://twitter.com/omkarpatill" target="_blank" title="Twitter">
-      <i class="fab fa-twitter"></i>
-    </a>
-  </div>
-</section>
+        <h2>Where to Find Me</h2>
+        <div class="social-icons">
+          <a href="https://linkedin.com/in/omkarpatill" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/omkarpatill" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com/omkarpatill" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </section>
     </main>
 
     <footer>
@@ -133,44 +179,43 @@
     </footer>
   </div>
 
- <script>
-  function setMode(mode) {
-    const body = document.body;
-    const toggle = document.getElementById('modeToggle');
-    const label = document.querySelector('.mode-label');
-
-    if (mode === 'light') {
-      body.classList.add('light-mode');
-      toggle.checked = true;
-      label.textContent = 'Light Mode';
-    } else {
-      body.classList.remove('light-mode');
-      toggle.checked = false;
-      label.textContent = 'Dark Mode';
+  <script>
+    function setMode(mode) {
+      const body = document.body;
+      const toggle = document.getElementById('modeToggle');
+      const label = document.querySelector('.mode-label');
+      if (mode === 'light') {
+        body.classList.add('light-mode');
+        toggle.checked = true;
+        label.textContent = 'Light Mode';
+      } else {
+        body.classList.remove('light-mode');
+        toggle.checked = false;
+        label.textContent = 'Dark Mode';
+      }
     }
-  }
 
-  function toggleMode() {
-    const isChecked = document.getElementById('modeToggle').checked;
-    const newMode = isChecked ? 'light' : 'dark';
-    setMode(newMode);
-    localStorage.setItem('theme', newMode);
-  }
+    function toggleMode() {
+      const isChecked = document.getElementById('modeToggle').checked;
+      const newMode = isChecked ? 'light' : 'dark';
+      setMode(newMode);
+      localStorage.setItem('theme', newMode);
+    }
 
-  window.addEventListener('DOMContentLoaded', () => {
-    const savedMode = localStorage.getItem('theme') || 'dark';
-    setMode(savedMode);
-  });
-</script>
-<!-- AOS JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-  AOS.init({
-    once: true, // animate only once
-    duration: 800, // animation duration (ms)
-    easing: 'ease-in-out', // easing function
-  });
-</script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedMode = localStorage.getItem('theme') || 'dark';
+      setMode(savedMode);
+    });
+  </script>
 
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 800,
+      easing: 'ease-in-out',
+    });
+  </script>
 </body>
 </html>
