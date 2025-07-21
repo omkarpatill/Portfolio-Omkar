@@ -52,12 +52,23 @@
     /* Responsive Fixes */
     @media (max-width: 768px) {
   .featured-projects .card {
-    width: 99%; /* Change from 100% to 95% for slight breathing room */
-    max-width: 99vw; /* Optional: ensures card doesn’t exceed viewport */
-    padding: 1rem;
+    width: 100%; /* Change from 100% to 95% for slight breathing room */
+    max-width: 100vw; /* Optional: ensures card doesn’t exceed viewport */
+    padding: 1.5rem;
     box-sizing: border-box;
     overflow: hidden;
     margin: 0 auto; /* Center the card */
+  }
+   
+  .main-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .theme-toggle-wrapper {
+    align-self: flex-end;
   }
 
       .nav-pills {
@@ -101,7 +112,7 @@
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        padding: 0 1rem;
+        padding: 0 rem;
       }
     
 

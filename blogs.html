@@ -8,12 +8,7 @@
   <!-- AOS CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="styles.css" />
 
   <style>
@@ -53,17 +48,25 @@
         padding: 1rem;
       }
 
+      .blog-controls input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.75rem 1rem;
+      }
+
       .tag-filter {
         display: flex;
         flex-wrap: nowrap;
         overflow-x: auto;
         gap: 0.5rem;
-        padding-bottom: 0.5rem;
+        padding: 0.5rem 0;
+        scroll-padding-left: 1rem;
       }
 
       .tag-filter .tag {
         white-space: nowrap;
         padding: 0.4rem 0.75rem;
+        flex-shrink: 0;
       }
 
       .blog-posts {
@@ -78,8 +81,17 @@
       }
 
       .card-buttons {
+        display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.75rem;
+        margin-top: 1rem;
+      }
+
+      .card-buttons a {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 1rem;
+        box-sizing: border-box;
       }
 
       .social-links {
@@ -92,6 +104,39 @@
         flex-wrap: wrap;
         gap: 1rem;
       }
+      .blog-post.card {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .card-buttons a {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .blog-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .blog-post.card * {
+    max-width: 100%;
+    word-break: break-word;
+  }
     }
   </style>
 </head>
@@ -137,7 +182,9 @@
           <h2>Automating IAM Reviews with Python</h2>
           <small>Feb, 2024</small>
           <p>Use Python to automate access control reviews for cloud resources and IAM roles.</p>
-          <a class="primarylink" href="blog2.html">Read More</a>
+          <div class="card-buttons">
+            <a class="primarylink" href="blog2.html">Read More</a>
+          </div>
           <div class="blog-tags">
             <span class="tag">Cloud</span>
             <span class="tag">Python</span>
@@ -148,14 +195,16 @@
           <h2>Top 5 Azure Security Practices</h2>
           <small>March, 2024</small>
           <p>Best practices for securing cloud infrastructure using Azure native tools and policies.</p>
-          <a class="primarylink" href="blog1.html">Read More</a>
+          <div class="card-buttons">
+            <a class="primarylink" href="blog1.html">Read More</a>
+          </div>
           <div class="blog-tags">
             <span class="tag">Azure</span>
             <span class="tag">Security</span>
           </div>
         </div>
 
-        <!-- More blog cards as needed -->
+        <!-- Add more blog posts here if needed -->
       </div>
 
       <section class="social-links" data-aos="fade-up">
@@ -173,7 +222,7 @@
     </footer>
   </div>
 
-  <!-- JS: Theme + Filter Logic -->
+  <!-- Theme + Filter Scripts -->
   <script>
     function setMode(mode) {
       const body = document.body;
