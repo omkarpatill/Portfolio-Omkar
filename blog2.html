@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog 2 | Omkar's Portfolio</title>
+  <!-- AOS CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="styles.css" rel="stylesheet" />
@@ -73,12 +75,12 @@
       </div>
     </nav>
 
-    <header class="hero-section">
+    <header class="hero-section" data-aos="zoom-in" data-aos-delay="150">
       <h1>This is a second dummy <span>blog</span></h1>
     </header>
 
     <main>
-      <section class="blog-content">
+      <section class="blog-content" data-aos="fade-up">
         <p>
           Dummy text is used in the publishing industry or by web designers to occupy space which will later be filled with real content.
           This is required when the final text is not yet available. It is also known as "fill text".
@@ -91,7 +93,7 @@
         </p>
       </section>
 
-      <section class="social-links">
+      <section class="social-links" data-aos="fade-up">
         <h2>Where to Find Me</h2>
         <div class="social-icons">
           <a href="https://linkedin.com/in/omkarpatill" target="_blank" title="LinkedIn">
@@ -139,6 +141,15 @@
     window.addEventListener('DOMContentLoaded', () => {
       const savedMode = localStorage.getItem('theme') || 'dark';
       setMode(savedMode);
+    });
+  </script>
+    <!-- AOS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 800,
+      easing: 'ease-in-out',
     });
   </script>
 </body>

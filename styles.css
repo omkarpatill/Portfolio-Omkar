@@ -536,6 +536,10 @@ input:checked + .slider::before {
 body.light-mode .nav-brand {
   color: var(--text-color);
 }
+.card p {
+  text-align: left;
+  color: var(--gray);
+}
 
 
 
