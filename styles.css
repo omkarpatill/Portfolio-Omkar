@@ -248,10 +248,17 @@ section {
 }
 
 .project-preview {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
   margin-top: 2rem;
+}
+
+.project-preview .card {
+  flex: 1 1 300px;
+  max-width: 400px;
+  min-width: 280px;
 }
 
 .project-grid {
