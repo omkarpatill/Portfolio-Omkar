@@ -5,122 +5,128 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Omkar | Cloud Security Analyst</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- AOS CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="styles.css" />
 
-<style>
-  @media (max-width: 768px) {
-    /* Navigation */
-    .main-nav {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 1rem;
-    }
-
-    .nav-pills {
-      flex-direction: column;
-      width: 100%;
-      gap: 0.5rem;
-    }
-
-    .nav-pills li a {
-      width: 100%;
-      display: block;
-      padding: 0.75rem 1rem;
-    }
-
-    .theme-toggle-wrapper {
-      align-self: flex-end;
-    }
-
-    /* Hero Section */
-    .hero-section {
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    .cta-buttons {
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    /* Skills and Certifications */
-    .skills-certs-row {
-      flex-direction: column;
-      padding: 1rem;
-    }
-
-    /* Featured Projects Section */
-    .featured-projects .project-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      padding: 0 1rem;
-    }
-
-    .featured-projects .card {
-      width: 100%;
+  <style>
+    /* General Card Layout Fix */
+    .card {
+      max-width: 700px;
+      margin: 0 auto;
+      box-sizing: border-box;
       padding: 1.5rem;
-      box-sizing: border-box;
-      overflow: hidden;
-    }
-
-    .featured-projects .card-buttons {
+      border-radius: 1rem;
+      background: var(--card-bg, #1A2332);
+      color: var(--text-color);
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
-      margin-top: 1rem;
-      width: 100%;
+      gap: 1rem;
     }
 
-    .featured-projects .card-buttons a {
-      width: 100%;
-      box-sizing: border-box;
-      text-align: center;
-      padding: 0.75rem 1rem;
-      word-break: break-word;
-    }
-
-    /* Social Links */
-    .social-links {
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-
-    .social-icons {
-      justify-content: center;
+    .card-buttons {
+      display: flex;
+      gap: 1rem;
       flex-wrap: wrap;
-      gap: 1.2rem;
+      margin-top: 1rem;
     }
-  }
 
-  /* General Card Styling */
-  .card {
-    max-width: 700px;
-    margin: 0 auto;
+    .card-buttons a {
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      text-align: center;
+      flex: 1 1 45%;
+      min-width: 120px;
+    }
+
+    /* Responsive Fixes */
+    @media (max-width: 768px) {
+  .featured-projects .card {
+    width: 98%; /* Change from 100% to 95% for slight breathing room */
+    max-width: 98vw; /* Optional: ensures card doesn’t exceed viewport */
+    padding: 1.5rem;
     box-sizing: border-box;
+    overflow: hidden;
+    margin: 0 auto; /* Center the card */
   }
 
-  .card-buttons {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
+      .nav-pills {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+      }
 
-  .card-buttons a {
-    text-decoration: none;
-    padding: 0.6rem 1.2rem;
-    display: inline-block;
-  }
-</style>
+      .nav-pills li a {
+        width: 100%;
+        display: block;
+        padding: 0.75rem 1rem;
+      }
 
+      .theme-toggle-wrapper {
+        align-self: flex-end;
+      }
 
+      .hero-section {
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .skills-certs-row {
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .skills-card,
+      .certs-card {
+        width: 100%;
+        max-width: none;
+      }
+
+      .featured-projects .project-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0 1rem;
+      }
+    
+
+      .featured-projects .card-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .featured-projects .card-buttons a {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 0.75rem 1rem;
+        word-break: break-word;
+      }
+
+      .social-links {
+        padding: 2rem 1rem;
+        text-align: center;
+      }
+
+      .social-icons {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+      }
+    }
+    .featured-projects .card {
+  max-width: 600px; /* Try 600px–680px as needed */
+  width: 100%;
+  margin: 0 auto;
+}
+  </style>
 </head>
-
 <body>
   <div class="container">
     <nav class="main-nav">
@@ -199,33 +205,33 @@
       </section>
 
       <section class="featured-projects" data-aos="fade-up">
-  <h2>Featured Projects</h2>
-  <p>Check out a few highlighted works from my portfolio:</p>
+        <h2>Featured Projects</h2>
+        <p>Check out a few highlighted works from my portfolio:</p>
 
-  <div class="project-grid">
-    <div class="card" data-aos="fade-up">
-          <h1>Emoji Interpreter</h1><small>December, 2022</small>
-          <p>Emoji dictionary to understand their meaning.</p>
-          <div class="card-buttons">
-            <a class="primarylink" href="https://h83qny.csb.app/">Live Project</a>
-            <a class="seclink" href="https://codesandbox.io/s/emojipedia-h83qny">View Source</a>
+        <div class="project-grid">
+          <div class="card" data-aos="fade-up">
+            <h1>Emoji Interpreter</h1><small>December, 2022</small>
+            <p>Emoji dictionary to understand their meaning.</p>
+            <div class="card-buttons">
+              <a class="primarylink" href="https://h83qny.csb.app/">Live Project</a>
+              <a class="seclink" href="https://codesandbox.io/s/emojipedia-h83qny">View Source</a>
+            </div>
+          </div>
+
+          <div class="card" data-aos="fade-up">
+            <h1>Hodor Translator</h1><small>December, 2022</small>
+            <p>Convert English text into Hodor language.</p>
+            <div class="card-buttons">
+              <a class="primarylink" href="https://hodortranslate.netlify.app/">Live Project</a>
+              <a class="seclink" href="https://github.com/omkarpatill/Hodor-translator">View Source</a>
+            </div>
           </div>
         </div>
 
-    <div class="card" data-aos="fade-up">
-          <h1>Hodor Translator</h1><small>December, 2022</small>
-          <p>Convert English text into Hodor language.</p>
-          <div class="card-buttons">
-            <a class="primarylink" href="https://hodortranslate.netlify.app/">Live Project</a>
-            <a class="seclink" href="https://github.com/omkarpatill/Hodor-translator">View Source</a>
-          </div>
-        </div>
-  </div>
-  <div class="see-all-projects" data-aos="fade-up">
+        <div class="see-all-projects" data-aos="fade-up">
           <a href="projects.html" class="seclink">See All Projects →</a>
         </div>
-</section>
-
+      </section>
 
       <section class="social-links" data-aos="fade-up">
         <h2>Where to Find Me</h2>
@@ -242,7 +248,6 @@
     </footer>
   </div>
 
-  <!-- Theme Mode Script -->
   <script>
     function setMode(mode) {
       const body = document.body;
@@ -272,7 +277,6 @@
     });
   </script>
 
-  <!-- AOS JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init({
