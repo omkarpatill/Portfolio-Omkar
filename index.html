@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Omkar | Cloud Security Analyst</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- AOS CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
   <!-- Font Awesome CDN -->
   <link
     rel="stylesheet"
@@ -16,32 +21,46 @@
 </head>
 <body>
   <div class="container">
-    <nav class="main-nav">
+    <nav class="main-nav" >
       <div class="nav-brand">Omkar's Portfolio</div>
       <ul class="nav-pills">
         <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="blogs.html">Blog</a></li>
       </ul>
-      <button class="toggle-btn" id="modeToggle" onclick="toggleMode()">Light Mode</button>
+      <div class="theme-toggle-wrapper">
+  <label class="theme-switch">
+    <input type="checkbox" id="modeToggle" onchange="toggleMode()" />
+    <span class="slider round"></span>
+  </label>
+  <span class="mode-label">Light Mode</span>
+</div>
+
     </nav>
 
-    <header class="hero-section">
-      <h1>Hi, I'm <span>Omkar</span></h1>
-      <p>Cloud Security Analyst passionate about building secure and scalable systems.</p>
-      <img 
-        src="undraw_cloud-hosting_tfeh.svg"
-        alt="Cloud Illustration"
-        style="max-width: 320px; width: 100%; margin: 2rem auto; display: block;"
-      >
-      <div class="cta-buttons">
-        <a href="projects.html" class="primarylink">View Projects</a>
-        <a href="Omkar_Resume.pdf" class="seclink">Download Resume</a>
-      </div>
-    </header>
+<header class="hero-section">
+  <h1 data-aos="zoom-in">Hi, I'm <span>Omkar</span></h1>
+  <p data-aos="zoom-in" data-aos-delay="150">
+    Cloud Security Analyst passionate about building secure and scalable systems.
+  </p>
+
+  <img 
+    src="undraw_cloud-hosting_tfeh.svg"
+    alt="Cloud Illustration"
+    data-aos="fade-up"
+    data-aos-delay="300"
+    style="max-width: 320px; width: 100%; margin: 2rem auto; display: block;"
+  >
+
+  <div class="cta-buttons" data-aos="fade-up" data-aos-delay="500">
+    <a href="projects.html" class="primarylink">View Projects</a>
+    <a href="Omkar_Resume.pdf" class="seclink">Download Resume</a>
+  </div>
+</header>
+
 
     <main>
-      <section class="about-me">
+      <section class="about-me" data-aos="fade-up">
         <h2>About Me</h2>
         <p>
           I’m a Cloud Security Analyst with experience in AWS, Azure, threat modeling, and secure-by-design practices. I enjoy working with automation, DevSecOps, and securing cloud-native apps.
@@ -51,7 +70,7 @@
       <section class="skills-certs-row">
         <div class="card skills-card">
           <h2>Skills &amp; Tools</h2>
-          <div class="skills-grid">
+          <div class="skills-grid" data-aos="fade-up">
             <div>
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" title="Azure" style="width:2.5rem;height:2.5rem;">
               <div>Azure</div>
@@ -78,17 +97,18 @@
             </div>
           </div>
         </div>
-        <div class="card certs-card">
+        <div class="card certs-card" data-aos="fade-up">
           <h2>Certifications</h2>
           <ul class="cert-list">
-            <li>Azure AZ-500</li>
-            <li>Azure AZ-104</li>
-            <li>Azure AZ-900</li>
-          </ul>
+  <li><i class="devicon-azure-plain colored"></i> Azure AZ-500</li>
+  <li><i class="devicon-azure-plain colored"></i> Azure AZ-104</li>
+  <li><i class="devicon-azure-plain colored"></i> Azure AZ-900</li>
+</ul>
+
         </div>
       </section>
 
-      <section class="featured-projects">
+      <section class="featured-projects" data-aos="fade-up">
         <h2>Featured Projects</h2>
         <p>Check out a few highlighted works from my portfolio:</p>
         <div class="project-preview">
@@ -114,13 +134,21 @@
         </div>
       </section>
 
-      <section class="blog-snippets">
-        <h2>Recent Blog Posts</h2>
-        <ul>
-          <li><a href="blogs.html">Top 5 OWASP Practices for Startups</a></li>
-          <li><a href="blogs.html">Automating IAM Reviews with Python</a></li>
-        </ul>
-      </section>
+      <section class="social-links" data-aos="fade-up">
+  <h2>Where to Find Me</h2>
+  <div class="social-icons">
+    <a href="https://linkedin.com/in/omkarpatill" target="_blank" title="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/omkarpatill" target="_blank" title="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://twitter.com/omkarpatill" target="_blank" title="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </div>
+</section>
+
     </main>
 
     <footer>
@@ -129,30 +157,44 @@
   </div>
   <script>
   function setMode(mode) {
+    const body = document.body;
+    const toggle = document.getElementById('modeToggle');
+    const label = document.querySelector('.mode-label');
+
     if (mode === 'light') {
-      document.body.classList.add('light-mode');
-      document.getElementById('modeToggle').textContent = 'Dark Mode';
+      body.classList.add('light-mode');
+      toggle.checked = true;
+      label.textContent = 'Light Mode';
     } else {
-      document.body.classList.remove('light-mode');
-      document.getElementById('modeToggle').textContent = 'Light Mode';
+      body.classList.remove('light-mode');
+      toggle.checked = false;
+      label.textContent = 'Dark Mode';
     }
   }
 
   function toggleMode() {
-    if (document.body.classList.contains('light-mode')) {
-      setMode('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      setMode('light');
-      localStorage.setItem('theme', 'light');
-    }
+    const isChecked = document.getElementById('modeToggle').checked;
+    const newMode = isChecked ? 'light' : 'dark';
+    setMode(newMode);
+    localStorage.setItem('theme', newMode);
   }
 
-  // On page load, set mode from localStorage
-  window.onload = function() {
-    const saved = localStorage.getItem('theme');
-    setMode(saved === 'light' ? 'light' : 'dark');
-  }
-  </script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const savedMode = localStorage.getItem('theme') || 'dark';
+    setMode(savedMode);
+  });
+</script>
+<!-- AOS JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    once: true, // animate only once
+    duration: 800, // animation duration (ms)
+    easing: 'ease-in-out', // easing function
+  });
+</script>
+
+
+
 </body>
 </html>

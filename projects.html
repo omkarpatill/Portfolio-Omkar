@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Omkar's Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- AOS CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
   <!-- Font Awesome CDN (for consistency with index.html) -->
   <link
     rel="stylesheet"
@@ -23,16 +25,22 @@
         <li><a href="projects.html" aria-current="page">Projects</a></li>
         <li><a href="blogs.html">Blog</a></li>
       </ul>
-      <button class="toggle-btn" id="modeToggle" onclick="toggleMode()">Light Mode</button>
+   <div class="theme-toggle-wrapper">
+  <label class="theme-switch">
+    <input type="checkbox" id="modeToggle" onchange="toggleMode()" />
+    <span class="slider round"></span>
+  </label>
+  <span class="mode-label">Light Mode</span>
+</div>
     </nav>
 
-    <header>
-      <h1 class="hero-header">See my <span>projects</span></h1>
+    <header class="hero-section" data-aos="zoom-in" data-aos-delay="150">
+      <h1>see my <span>projects</span></h1>
     </header>
 
     <main>
-      <div class="project-grid">
-        <div class="card">
+      <div class="project-grid" >
+        <div class="card" data-aos="fade-up">
           <h1>Is your birthday lucky?</h1><small>December, 2022</small>
           <p>Check whether your birthday is lucky or not.</p>
           <div class="card-buttons">
@@ -41,7 +49,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-aos="fade-up">
           <h1>Cash Register</h1><small>December, 2022</small>
           <p>Helps users return change with minimum number of notes.</p>
           <div class="card-buttons">
@@ -50,7 +58,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-aos="fade-up">
           <h1>Goodsongs</h1><small>December, 2022</small>
           <p>Song recommendations across genres using ReactJS.</p>
           <div class="card-buttons">
@@ -59,7 +67,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-aos="fade-up">
           <h1>Emoji Interpreter</h1><small>December, 2022</small>
           <p>Emoji dictionary to understand their meaning.</p>
           <div class="card-buttons">
@@ -68,7 +76,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-aos="fade-up">
           <h1>Hodor Translator</h1><small>December, 2022</small>
           <p>Convert English text into Hodor language.</p>
           <div class="card-buttons">
@@ -77,7 +85,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-aos="fade-up">
           <h1>Minion Translator</h1><small>December, 2022</small>
           <p>Convert English to Banana (Minion) language.</p>
           <div class="card-buttons">
@@ -86,7 +94,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-aos="fade-up">
           <h1>Do You Know Your Cartoons?</h1><small>December, 2022</small>
           <p>Play a quiz about classic cartoons.</p>
           <div class="card-buttons">
@@ -95,7 +103,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-aos="fade-up">
           <h1>Do You Know Omkar?</h1><small>December, 2022</small>
           <p>A CLI quiz app to test how well your friends know you.</p>
           <div class="card-buttons">
@@ -104,6 +112,20 @@
           </div>
         </div>
       </div>
+      <section class="social-links" data-aos="fade-up">
+  <h2>Where to Find Me</h2>
+  <div class="social-icons">
+    <a href="https://linkedin.com/in/omkarpatill" target="_blank" title="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/omkarpatill" target="_blank" title="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://twitter.com/omkarpatill" target="_blank" title="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </div>
+</section>
     </main>
 
     <footer>
@@ -111,32 +133,44 @@
     </footer>
   </div>
 
-  <script>
+ <script>
   function setMode(mode) {
+    const body = document.body;
+    const toggle = document.getElementById('modeToggle');
+    const label = document.querySelector('.mode-label');
+
     if (mode === 'light') {
-      document.body.classList.add('light-mode');
-      document.getElementById('modeToggle').textContent = 'Dark Mode';
+      body.classList.add('light-mode');
+      toggle.checked = true;
+      label.textContent = 'Light Mode';
     } else {
-      document.body.classList.remove('light-mode');
-      document.getElementById('modeToggle').textContent = 'Light Mode';
+      body.classList.remove('light-mode');
+      toggle.checked = false;
+      label.textContent = 'Dark Mode';
     }
   }
 
   function toggleMode() {
-    if (document.body.classList.contains('light-mode')) {
-      setMode('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      setMode('light');
-      localStorage.setItem('theme', 'light');
-    }
+    const isChecked = document.getElementById('modeToggle').checked;
+    const newMode = isChecked ? 'light' : 'dark';
+    setMode(newMode);
+    localStorage.setItem('theme', newMode);
   }
 
-  // On page load, set mode from localStorage
-  window.onload = function() {
-    const saved = localStorage.getItem('theme');
-    setMode(saved === 'light' ? 'light' : 'dark');
-  }
+  window.addEventListener('DOMContentLoaded', () => {
+    const savedMode = localStorage.getItem('theme') || 'dark';
+    setMode(savedMode);
+  });
 </script>
+<!-- AOS JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    once: true, // animate only once
+    duration: 800, // animation duration (ms)
+    easing: 'ease-in-out', // easing function
+  });
+</script>
+
 </body>
 </html>

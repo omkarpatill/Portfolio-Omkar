@@ -4,18 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blogs | Omkar's Portfolio</title>
+  <!-- AOS CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome CDN (for consistency with index.html) -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-  <link href="styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="container">
+    <!-- Navigation -->
     <nav class="main-nav">
       <div class="nav-brand">Omkar's Portfolio</div>
       <ul class="nav-pills">
@@ -23,46 +25,143 @@
         <li><a href="projects.html">Projects</a></li>
         <li><a href="blogs.html" aria-current="page">Blog</a></li>
       </ul>
-      <button class="toggle-btn" id="modeToggle" onclick="toggleMode()">Light Mode</button>
+      <div class="theme-toggle-wrapper">
+        <label class="theme-switch">
+          <input type="checkbox" id="modeToggle" onchange="toggleMode()" />
+          <span class="slider round"></span>
+        </label>
+        <span class="mode-label">Light Mode</span>
+      </div>
     </nav>
-    <header class="hero">
-        <h1 class="hero-header">see my <span class="span">blogs</span></h1>
-        <ul>
-            <li><h1>dummy blog one</h1> <small>december,2022</small></li>
-            <p>The most well-known dummy text is the 'Lorem Ipsum', which is said to have originated in the 16th century. Lorem Ipsum is composed in a pseudo-Latin language which more or less corresponds to 'proper' Latin. It contains a series of real Latin words.</p>
-            <a class="primarylink" href="blog1.html">read more</a>
 
-            <li><h1>dummy blog two</h1> <small>december,2022</small></li>
-            <p>The most well-known dummy text is the 'Lorem Ipsum', which is said to have originated in the 16th century. Lorem Ipsum is composed in a pseudo-Latin language which more or less corresponds to 'proper' Latin. It contains a series of real Latin words.</p>
-            <a class="primarylink" href="blog2.html">read more</a>
-        </ul>
- </header>
- <script>
-  function setMode(mode) {
-    if (mode === 'light') {
-      document.body.classList.add('light-mode');
-      document.getElementById('modeToggle').textContent = 'Dark Mode';
-    } else {
-      document.body.classList.remove('light-mode');
-      document.getElementById('modeToggle').textContent = 'Light Mode';
+    <header class="hero-section" data-aos="zoom-in" data-aos-delay="150">
+      <h1 class="hero-header">explore <span>my blogs</span></h1>
+    </header>
+
+    <!-- Filters -->
+    <section class="blog-controls" data-aos="fade-up">
+      <input type="text" id="blogSearch" placeholder="Search blog posts..." />
+      <div class="tag-filter">
+        <span class="tag" data-tag="all">All</span>
+        <span class="tag" data-tag="security">Security</span>
+        <span class="tag" data-tag="azure">Azure</span>
+        <span class="tag" data-tag="cloud">Cloud</span>
+        <span class="tag" data-tag="python">Python</span>
+      </div>
+    </section>
+
+    <main>
+  <div class="blog-posts" >
+    <div class="blog-post card" data-tags="cloud,python" data-aos="fade-up">
+      <h2>Automating IAM Reviews with Python</h2>
+      <small>Feb, 2024</small>
+      <p>Use Python to automate access control reviews for cloud resources and IAM roles.</p>
+      <a class="primarylink" href="blog2.html">Read More</a>
+      <div class="blog-tags">
+        <span class="tag">Cloud</span>
+        <span class="tag">Python</span>
+      </div>
+    </div>
+
+    <div class="blog-post card" data-tags="security,azure" data-aos="fade-up">
+      <h2>Top 5 Azure Security Practices</h2>
+      <small>March, 2024</small>
+      <p>Best practices for securing cloud infrastructure using Azure native tools and policies.</p>
+      <a class="primarylink" href="blog1.html">Read More</a>
+      <div class="blog-tags">
+        <span class="tag">Azure</span>
+        <span class="tag">Security</span>
+      </div>
+    </div>
+    <section class="social-links" data-aos="fade-up">
+  <h2>Where to Find Me</h2>
+  <div class="social-icons">
+    <a href="https://linkedin.com/in/omkarpatill" target="_blank" title="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/omkarpatill" target="_blank" title="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://twitter.com/omkarpatill" target="_blank" title="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </div>
+</section>
+
+    <!-- Add more blog cards here -->
+  </div>
+</main>
+
+
+    <footer>
+      <p style="text-align:center;">&copy; 2025 Omkar. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- JS: Theme + Filter Logic -->
+  <script>
+    function setMode(mode) {
+      const body = document.body;
+      const toggle = document.getElementById('modeToggle');
+      const label = document.querySelector('.mode-label');
+      if (mode === 'light') {
+        body.classList.add('light-mode');
+        toggle.checked = true;
+        label.textContent = 'Light Mode';
+      } else {
+        body.classList.remove('light-mode');
+        toggle.checked = false;
+        label.textContent = 'Dark Mode';
+      }
     }
-  }
 
-  function toggleMode() {
-    if (document.body.classList.contains('light-mode')) {
-      setMode('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      setMode('light');
-      localStorage.setItem('theme', 'light');
+    function toggleMode() {
+      const isChecked = document.getElementById('modeToggle').checked;
+      const newMode = isChecked ? 'light' : 'dark';
+      setMode(newMode);
+      localStorage.setItem('theme', newMode);
     }
-  }
 
-  // On page load, set mode from localStorage
-  window.onload = function() {
-    const saved = localStorage.getItem('theme');
-    setMode(saved === 'light' ? 'light' : 'dark');
-  }
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedMode = localStorage.getItem('theme') || 'dark';
+      setMode(savedMode);
+    });
+
+    // Blog filtering
+    const searchInput = document.getElementById('blogSearch');
+    const tagFilters = document.querySelectorAll('.tag-filter .tag');
+    const posts = document.querySelectorAll('.blog-post');
+    let activeTag = 'all';
+
+    searchInput.addEventListener('input', filterPosts);
+    tagFilters.forEach(tag => {
+      tag.addEventListener('click', () => {
+        activeTag = tag.dataset.tag;
+        document.querySelectorAll('.tag-filter .tag').forEach(t => t.classList.remove('active'));
+        tag.classList.add('active');
+        filterPosts();
+      });
+    });
+
+    function filterPosts() {
+      const searchTerm = searchInput.value.toLowerCase();
+      posts.forEach(post => {
+        const text = post.textContent.toLowerCase();
+        const tags = post.dataset.tags.split(',');
+        const matchesSearch = text.includes(searchTerm);
+        const matchesTag = activeTag === 'all' || tags.includes(activeTag);
+        post.style.display = matchesSearch && matchesTag ? 'block' : 'none';
+      });
+    }
+  </script>
+  <!-- AOS JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    once: true, // animate only once
+    duration: 800, // animation duration (ms)
+    easing: 'ease-in-out', // easing function
+  });
 </script>
 </body>
 </html>

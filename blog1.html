@@ -1,37 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog 1</title>
-    <link href="styles.css" rel="stylesheet"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog 1 | Omkar's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="styles.css" rel="stylesheet" />
 </head>
 <body>
-    <nav class="navigation container">
-        <div class="nav-brand">Omkar's Portfolio</div>
-        <ul class="nav-pills">
-            <li class="list-inline"><a class="link" href="index.html">Home</a></li>
-            <li class="list-inline"><a class="link" href="projects.html">Projects</a></li>
-            <li class="list-inline"><a class="link link-active"  href="blogs.html">Blog</a></li>
-        </ul>
+  <div class="container">
+    <nav class="main-nav">
+      <div class="nav-brand">Omkar's Portfolio</div>
+      <ul class="nav-pills">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="blogs.html" aria-current="page">Blog</a></li>
+      </ul>
+      <div class="theme-toggle-wrapper">
+        <label class="theme-switch">
+          <input type="checkbox" id="modeToggle" onchange="toggleMode()" />
+          <span class="slider round"></span>
+        </label>
+        <span class="mode-label">Light Mode</span>
+      </div>
     </nav>
 
-    <header>
-       
-        <section class="section">
-            <div class="container-centre"> <h1 class="hero-header">this is a dummy <span class="span">blog</span></h1>
-                <p>Dummy text: Its function as a filler or as a tool for comparing the visual impression of different typefaces Dummy text is text that is used in the publishing industry or by web designers to occupy the space which will later be filled with 'real' content. This is required when, for example, the final text is not yet available. Dummy text is also known as 'fill text'. It is said that song composers of the past used dummy texts as lyrics when writing melodies in order to have a 'ready-made' text to sing with the melody. Dummy texts have been in use by typesetters since the 16th century.
-
-                    The usefulness of nonsensical content
-                    
-                    Dummy text is also used to demonstrate the appearance of different typefaces and layouts, and in general the content of dummy text is nonsensical. Due to its widespread use as filler text for layouts, non-readability is of great importance: human perception is tuned to recognize certain patterns and repetitions in texts. If the distribution of letters and 'words' is random, the reader will not be distracted from making a neutral judgement on the visual impact and readability of the typefaces (typography), or the distribution of text on the page (layout or type area). For this reason, dummy text usually consists of a more or less random series of words or syllables. This prevents repetitive patterns from impairing the overall visual impression and facilitates the comparison of different typefaces. Furthermore, it is advantageous when the dummy text is relatively realistic so that the layout impression of the final publication is not compromised.
-                    
-                    Incomprehensibility or readability? That is the question.
-                    
-                    The most well-known dummy text is the 'Lorem Ipsum', which is said to have originated in the 16th century. Lorem Ipsum is composed in a pseudo-Latin language which more or less corresponds to 'proper' Latin. It contains a series of real Latin words. This ancient dummy text is also incomprehensible, but it imitates the rhythm of most European languages in Latin script. The advantage of its Latin origin and the relative meaninglessness of Lorum Ipsum is that the text does not attract attention to itself or distract the viewer's attention from the layout.</p>
-                
-            </div>
+    <header class="hero-section">
+      <h1>This is a dummy <span>blog</span></h1>
     </header>
+
+    <main>
+      <section class="about-me">
+        <p>
+          Dummy text is used in the publishing industry or by web designers to occupy space which will later be filled with real content.
+          This is required when the final text is not yet available. It is also known as "fill text".
+        </p>
+        <p>
+          Dummy text helps compare typefaces and layouts without distraction. Since human perception notices patterns and repetitions in text, dummy text is often randomized to avoid this distraction.
+        </p>
+        <p>
+          The most well-known dummy text is "Lorem Ipsum", originating in the 16th century. While pseudo-Latin, it imitates the rhythm of European languages and remains readable enough for layout mockups, without distracting from design.
+        </p>
+      </section>
+
+      <section class="social-links">
+        <h2>Where to Find Me</h2>
+        <div class="social-icons">
+          <a href="https://linkedin.com/in/omkarpatill" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/omkarpatill" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://twitter.com/omkarpatill" target="_blank" title="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p style="text-align:center;">&copy; 2025 Omkar. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    function setMode(mode) {
+      const body = document.body;
+      const toggle = document.getElementById('modeToggle');
+      const label = document.querySelector('.mode-label');
+
+      if (mode === 'light') {
+        body.classList.add('light-mode');
+        toggle.checked = true;
+        label.textContent = 'Light Mode';
+      } else {
+        body.classList.remove('light-mode');
+        toggle.checked = false;
+        label.textContent = 'Dark Mode';
+      }
+    }
+
+    function toggleMode() {
+      const isChecked = document.getElementById('modeToggle').checked;
+      const newMode = isChecked ? 'light' : 'dark';
+      setMode(newMode);
+      localStorage.setItem('theme', newMode);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedMode = localStorage.getItem('theme') || 'dark';
+      setMode(savedMode);
+    });
+  </script>
 </body>
 </html>
